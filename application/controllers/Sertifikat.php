@@ -21,10 +21,10 @@ class Sertifikat extends CI_Controller {
             $peserta['t4_lahir'] = ucwords(strtolower($peserta['t4_lahir']));
             $peserta['tahun'] = date('y', strtotime($tes['tgl_tes']));
             $peserta['bulan'] = getRomawi(date('m', strtotime($tes['tgl_tes'])));
-            $peserta['listening'] = poin("Listening", $peserta['nilai_listening']);
-            $peserta['reading'] = poin("Reading", $peserta['nilai_reading']);
+            $peserta['listening'] = poin_toeic("Listening", $peserta['nilai_listening']);
+            $peserta['reading'] = poin_toeic("Reading", $peserta['nilai_reading']);
             $peserta['tgl_tes'] = $tes['tgl_tes'];
-            $peserta['tgl_berakhir'] = date('Y-m-d', strtotime('+1 year', strtotime($tes['tgl_tes'])));
+            $peserta['tgl_berakhir'] = date('Y-m-d', strtotime('+2 year', strtotime($tes['tgl_tes'])));
 
             $peserta['link_foto'] = config();
 
@@ -32,7 +32,8 @@ class Sertifikat extends CI_Controller {
             $peserta['skor'] = $skor;
 
             // $peserta['no_doc'] = "{$peserta['no_doc']}/TOAFL/ACP/{$peserta['bulan']}/{$peserta['tahun']}";
-            $peserta['no_doc'] = "{$peserta['tahun']}/{$peserta['no_doc']}";
+            // $peserta['no_doc'] = "{$peserta['tahun']}/{$peserta['no_doc']}";
+            $peserta['no_doc'] = "EC/TOEIC/{$peserta['no_doc']}";
         }
 
         // $this->load->view("pages/layout/header-sertifikat", $peserta);
