@@ -565,12 +565,12 @@
                     // hide all id 
                     $("div[id^='sesi-'").hide();
                     // show sesi 
-                    $("#sesi-3").show();
+                    $("#sesi-2").show();
 
                     sec = 75 * 60
                     countDown = setInterval(function () {
                         'use strict';
-                        secpass('sesi-3');
+                        secpass('sesi-2');
                     }, 1000);
                 })
             } else {
