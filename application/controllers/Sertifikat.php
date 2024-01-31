@@ -24,7 +24,7 @@ class Sertifikat extends CI_Controller {
             $peserta['listening'] = poin_toeic("Listening", $peserta['nilai_listening']);
             $peserta['reading'] = poin_toeic("Reading", $peserta['nilai_reading']);
             $peserta['tgl_tes'] = $tes['tgl_tes'];
-            $peserta['tgl_berakhir'] = date('Y-m-d', strtotime('+1 year', strtotime($tes['tgl_tes'])));
+            $peserta['tgl_berakhir'] = date('Y-m-d', strtotime('+2 year', strtotime($tes['tgl_tes'])));
 
             $peserta['link_foto'] = config();
 
